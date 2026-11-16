@@ -4,6 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#faf5ec" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="64x64" href="icons/favicon-64.png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="餃酌" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="description" content="餃酌 JIAO ZHUO｜用好食材與好手藝，煎出每一口幸福。探索現煎鍋貼、職人水餃與冷凍禮盒。" />
   <title>餃酌 JIAO ZHUO｜把日常煎成好日子</title>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -167,6 +174,7 @@ ${dress?`<path d="M14 26h13l3 30H11z" fill="${top}"/>`:`<rect x="13" y="25" widt
       for(let i=0;i<count;i++){const depth=Math.random(),scale=.62+depth*.45,y=Math.round(6+(1-depth)*54),speed=50*scale,dur=(travel/speed).toFixed(1),delay=(-Math.random()*dur).toFixed(1),rtl=Math.random()<.5,o=(.82+depth*.18).toFixed(2);
         out+=`<div class="person${rtl?' rtl':''}" style="--y:${y}px;--s:${scale.toFixed(2)};--f:${rtl?-1:1};--d:${dur}s;--delay:${delay}s;--o:${o};z-index:${Math.round(depth*10)}">${person()}</div>`;}
       crowd.innerHTML=out;})();
+    if('serviceWorker' in navigator&&location.protocol!=='file:'){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));}
     $('#year').textContent=new Date().getFullYear();renderTabs();renderProducts();renderStores();renderFaq();updateCart();icon();
   </script>
   <a class="btn booking-fab" href="https://calendar.app.google/XRaSXQ6rDUVAbrJq7" target="_blank" rel="noopener noreferrer" aria-label="立即預約（Google 日曆，另開新分頁）">
