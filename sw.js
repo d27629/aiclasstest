@@ -1,5 +1,5 @@
 /* 餃酌 PWA service worker: offline app shell + runtime caching. Bump VERSION on each release. */
-const VERSION = 'jiaozhuo-v2';
+const VERSION = 'jiaozhuo-v3';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './config.js', './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png', './icons/apple-touch-icon.png', './icons/favicon-64.png'];
 
 self.addEventListener('install', event => {
