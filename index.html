@@ -24,6 +24,9 @@
     #toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,30px);opacity:0;pointer-events:none;z-index:120;background:#32241e;color:white;padding:13px 20px;border-radius:999px;box-shadow:0 10px 28px #0003;transition:opacity .25s,transform .25s;font-size:13px;font-weight:700;max-width:90%;text-align:center}#toast.show{opacity:1;transform:translate(-50%,0)}
     @media(max-width:767px){.shell{width:min(100% - 32px,1200px)}.hero{min-height:660px;background-position:61% center;background-image:linear-gradient(90deg,rgba(35,24,18,.86),rgba(35,24,18,.48)),url('https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1300&q=85')}.hero-heading{font-size:42px;line-height:1.38}#mobile-nav{display:none}#mobile-nav.open{display:flex}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+    .booking-fab{position:fixed;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:40;min-height:52px;background:var(--espresso);color:#fff;text-decoration:none;box-shadow:0 8px 24px #32241e33}
+    .booking-fab:hover{background:var(--cocoa)}.booking-fab:focus-visible{outline:3px solid var(--orange);outline-offset:4px}.booking-fab svg{width:20px;height:20px;flex:none}
+    @media(max-width:767px){.booking-fab{right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px))}}
   </style>
 </head>
 <body>
@@ -138,5 +141,9 @@
     $('#privacy-button').addEventListener('click',()=>toast('展示網站不蒐集或傳送資料；購物車僅保存於本機瀏覽器。'));
     $('#year').textContent=new Date().getFullYear();renderTabs();renderProducts();renderStores();renderFaq();updateCart();icon();
   </script>
+  <a class="btn booking-fab" href="https://calendar.app.google/XRaSXQ6rDUVAbrJq7" target="_blank" rel="noopener noreferrer" aria-label="立即預約（Google 日曆，另開新分頁）">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18m-12 5 2 2 4-4"/></svg>
+    立即預約
+  </a>
 </body>
 </html>
